@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- RecyclerView for displaying list of songs -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSongs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/controlPanel"
+        android:scrollbars="vertical" />
+
+    <!-- Playback control panel -->
+    <LinearLayout
+        android:id="@+id/controlPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Play/pause button -->
+        <ImageButton
+            android:id="@+id/baseline_play_arrow_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_play_arrow_24"
+            android:contentDescription="Play/Pause button" />
+
+        <!-- Skip previous button -->
+        <ImageButton
+            android:id="@+id/buttonPrevious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_skip_previous_24"
+            android:contentDescription="Skip previous button" />
+
+        <!-- Skip next button -->
+        <ImageButton
+            android:id="@+id/buttonNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_skip_next_24"
+            android:contentDescription="Skip next button" />
+
+        <!-- Seek bar for displaying playback progress -->
+        <SeekBar
+            android:id="@+id/seekBarProgress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="100"
+            android:progress="0" />
+
+        <!-- TextView for displaying current playback position -->
+        <TextView
+            android:id="@+id/textViewCurrentPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0:00"
+            android:paddingEnd="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+        <!-- TextView for displaying total duration -->
+        <TextView
+            android:id="@+id/textViewTotalDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0:00"
+            android:paddingStart="8dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+    <!-- EditText layout -->
+    <LinearLayout
+        android:id="@+id/editTextLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/controlPanel"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- EditText for title, artist, album, and duration -->
+        <EditText
+            android:id="@+id/editTextTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextArtist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Artist"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextAlbum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Album"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Duration"
+            android:inputType="number" />
+    </LinearLayout>
+
+</RelativeLayout>

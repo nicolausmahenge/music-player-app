@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="editTextTitle" type="id">editTextTitle</item>
+    <item name="editTextArtist" type="id">editTextArtist</item>
+    <item name="editTextAlbum" type="id">editTextAlbum</item>
+    <item name="editTextDuration" type="id">editTextDuration</item>
+    <item name="buttonAddSong" type="id">buttonAddSong</item>
+</resources>
